@@ -48,7 +48,7 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
     #quiz-container img {
-      display: none !important; /* Oculta siempre las imágenes */
+      display: none !important; /* Ocultamos imágenes */
     }
     #opciones div {
       margin-bottom: 8px;
@@ -221,7 +221,7 @@
       const preguntaObj = preguntas[preguntaActual];
       preguntaElem.textContent = preguntaObj.pregunta;
 
-      // Siempre ocultar imagen
+      // Ocultamos siempre la imagen para que no aparezca
       imagenElem.style.display = "none";
 
       preguntaObj.opciones.forEach((opcion, index) => {
@@ -284,7 +284,6 @@
       container.innerHTML = `<h2>Quiz terminado</h2><p>Tu puntaje fue ${puntaje} de ${preguntas.length}.</p>`;
     }
 
-    // Carga la primera pregunta al iniciar
     cargarPregunta();
   </script>
 
