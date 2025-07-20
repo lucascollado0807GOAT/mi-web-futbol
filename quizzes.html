@@ -5,7 +5,6 @@
   <title>Quizzes - FutQuizz</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Estilos generales */
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -40,7 +39,6 @@
       color: #ffcc00;
       text-decoration: underline;
     }
-
     main {
       max-width: 600px;
       margin: 30px auto;
@@ -49,10 +47,8 @@
       border-radius: 8px;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
-
-    /* Estilos del quiz */
     #quiz-container img {
-      display: none !important; /* Siempre ocultar imágenes */
+      display: none !important; /* Oculta siempre las imágenes */
     }
     #opciones div {
       margin-bottom: 8px;
@@ -76,7 +72,6 @@
     button:hover {
       background-color: #0056b3;
     }
-
     footer {
       text-align: center;
       padding: 15px 10px;
@@ -226,7 +221,7 @@
       const preguntaObj = preguntas[preguntaActual];
       preguntaElem.textContent = preguntaObj.pregunta;
 
-      // Ocultar imagen siempre
+      // Siempre ocultar imagen
       imagenElem.style.display = "none";
 
       preguntaObj.opciones.forEach((opcion, index) => {
@@ -289,7 +284,7 @@
       container.innerHTML = `<h2>Quiz terminado</h2><p>Tu puntaje fue ${puntaje} de ${preguntas.length}.</p>`;
     }
 
-    // Carga la primera pregunta al cargar la página
+    // Carga la primera pregunta al iniciar
     cargarPregunta();
   </script>
 
