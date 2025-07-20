@@ -5,19 +5,57 @@
   <title>Quizzes - FutQuizz</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Estilos mínimos para el quiz */
-    #quiz-container {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 15px;
-      border: 2px solid #333;
-      border-radius: 8px;
-      background-color: #f9f9f9;
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      color: #333;
     }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    nav a.active {
+      font-weight: bold;
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    /* Estilos del quiz */
     #quiz-container img {
       max-width: 100%;
       height: auto;
       margin-bottom: 15px;
+      display: none;
     }
     #opciones div {
       margin-bottom: 8px;
@@ -31,14 +69,23 @@
       cursor: pointer;
       padding: 8px 12px;
       margin-top: 10px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
     }
-    header nav a {
-      margin-right: 10px;
-      text-decoration: none;
-      color: #007bff;
+    button:hover {
+      background-color: #0056b3;
     }
-    header nav a:hover {
-      text-decoration: underline;
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background-color: #222;
+      color: #ccc;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -48,7 +95,7 @@
     <h1>⚽ FutQuizz</h1>
     <nav>
       <a href="index.html">Inicio</a>
-      <a href="quizzes.html">Quizzes</a>
+      <a href="quizzes.html" class="active">Quizzes</a>
       <a href="historias.html">Historias</a>
     </nav>
   </header>
@@ -57,7 +104,7 @@
     <div id="quiz-container">
       <h1>Quiz de Fútbol</h1>
       <p id="pregunta"></p>
-      <img id="imagen" src="" alt="Imagen pregunta" style="display:none;" />
+      <img id="imagen" src="" alt="Imagen pregunta" />
       <div id="opciones"></div>
       <button onclick="verificar()">Verificar respuesta</button>
       <div id="resultado"></div>
@@ -249,6 +296,7 @@
       container.innerHTML = `<h2>Quiz terminado</h2><p>Tu puntaje fue ${puntaje} de ${preguntas.length}.</p>`;
     }
 
+    // Carga la primera pregunta al cargar la página
     cargarPregunta();
   </script>
 
