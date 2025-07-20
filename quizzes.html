@@ -52,10 +52,7 @@
 
     /* Estilos del quiz */
     #quiz-container img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 15px;
-      display: none;
+      display: none !important; /* Siempre ocultar imágenes */
     }
     #opciones div {
       margin-bottom: 8px;
@@ -119,37 +116,37 @@
     const preguntas = [
       {
         pregunta: "¿Quién ganó la Copa Mundial de la FIFA en 2018?",
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FIFA_WC_2018_Logo.svg/800px-FIFA_WC_2018_Logo.svg.png",
+        imagen: "",
         opciones: ["Alemania", "Francia", "Brasil", "Argentina"],
         correcta: 1
       },
       {
         pregunta: '¿Qué jugador es conocido como "El Fenómeno"?',
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Ronaldo_2008.jpg",
+        imagen: "",
         opciones: ["Ronaldo Nazário", "Pelé", "Lionel Messi", "Cristiano Ronaldo"],
         correcta: 0
       },
       {
         pregunta: "¿En qué año se fundó el club FC Barcelona?",
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/4/47/FC_Barcelona_%282015%29.svg",
+        imagen: "",
         opciones: ["1899", "1902", "1888", "1910"],
         correcta: 0
       },
       {
         pregunta: "¿Qué país tiene más títulos mundiales de fútbol?",
-        imagen: "https://upload.wikimedia.org/wikipedia/en/0/05/Brazil_flag.svg",
+        imagen: "",
         opciones: ["Italia", "Alemania", "Brasil", "Argentina"],
         correcta: 2
       },
       {
         pregunta: "¿Quién es el máximo goleador histórico de la Liga española?",
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/8/89/Lionel_Messi_20180626.jpg",
+        imagen: "",
         opciones: ["Lionel Messi", "Cristiano Ronaldo", "Telmo Zarra", "Raúl González"],
         correcta: 0
       },
       {
         pregunta: "¿Cuál es el apodo del club inglés Manchester United?",
-        imagen: "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
+        imagen: "",
         opciones: ["The Reds", "The Blues", "The Red Devils", "The Gunners"],
         correcta: 2
       },
@@ -161,7 +158,7 @@
       },
       {
         pregunta: "¿Qué selección ganó la Eurocopa de 2016?",
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Portugal.svg",
+        imagen: "",
         opciones: ["Francia", "Alemania", "Portugal", "España"],
         correcta: 2
       },
@@ -169,11 +166,11 @@
         pregunta: "¿Quién ganó el Balón de Oro en 2023?",
         imagen: "",
         opciones: ["Lionel Messi", "Kylian Mbappé", "Erling Haaland", "Karim Benzema"],
-        correcta: 2
+        correcta: 0
       },
       {
         pregunta: "¿Qué equipo tiene el récord de más títulos de la UEFA Champions League?",
-        imagen: "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
+        imagen: "",
         opciones: ["AC Milan", "Real Madrid", "Liverpool", "Bayern Munich"],
         correcta: 1
       },
@@ -196,7 +193,7 @@
       },
       {
         pregunta: "¿En qué país se originó el fútbol moderno?",
-        imagen: "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg",
+        imagen: "",
         opciones: ["Inglaterra", "Escocia", "España", "Italia"],
         correcta: 0
       },
@@ -208,7 +205,7 @@
       },
       {
         pregunta: "¿Qué famoso jugador argentino es apodado “La Pulga”?",
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/8/89/Lionel_Messi_20180626.jpg",
+        imagen: "",
         opciones: ["Diego Maradona", "Lionel Messi", "Sergio Agüero", "Carlos Tevez"],
         correcta: 1
       }
@@ -229,12 +226,8 @@
       const preguntaObj = preguntas[preguntaActual];
       preguntaElem.textContent = preguntaObj.pregunta;
 
-      if (preguntaObj.imagen) {
-        imagenElem.src = preguntaObj.imagen;
-        imagenElem.style.display = "block";
-      } else {
-        imagenElem.style.display = "none";
-      }
+      // Ocultar imagen siempre
+      imagenElem.style.display = "none";
 
       preguntaObj.opciones.forEach((opcion, index) => {
         const div = document.createElement("div");
