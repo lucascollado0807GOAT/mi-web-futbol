@@ -5,13 +5,61 @@
   <title>Inicio - FutQuizz</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    header nav a {
-      margin-right: 10px;
-      text-decoration: none;
-      color: #007bff;
+    /* Estilos básicos para menú y contenido */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
     }
-    header nav a:hover {
-      text-decoration: underline;
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #ffcc00;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    main h2 {
+      font-size: 2rem;
+      margin-top: 0;
+      padding-top: 20px;
+    }
+    main p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background-color: #222;
+      color: #ccc;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -20,7 +68,7 @@
   <header>
     <h1>⚽ FutQuizz</h1>
     <nav>
-      <a href="index.html">Inicio</a>
+      <a href="index.html" class="active">Inicio</a>
       <a href="quizzes.html">Quizzes</a>
       <a href="historias.html">Historias</a>
     </nav>
@@ -28,9 +76,21 @@
 
   <main>
     <h2>Bienvenido a FutQuizz</h2>
-    <p>Explorá quizzes de fútbol y conocé historias de jugadores y clubes legendarios.</p>
+    <p>
+      Explorá quizzes de fútbol y conocé historias de jugadores y clubes legendarios.
+      Pronto agregaremos más contenido para que puedas aprender y divertirte.
+    </p>
 
-    <!-- Aquí puedes agregar más contenido, como historias, noticias, imágenes, etc. -->
+    <!-- Aquí podés agregar secciones nuevas, por ejemplo: -->
+    <section>
+      <h3>Noticias destacadas</h3>
+      <p>Próximamente las últimas novedades del mundo del fútbol.</p>
+    </section>
+
+    <section>
+      <h3>Historias de leyendas</h3>
+      <p>Descubrí la vida y carrera de tus jugadores favoritos.</p>
+    </section>
   </main>
 
   <footer>
