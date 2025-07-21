@@ -5,50 +5,14 @@
   <title>Quizzes - FutQuizz</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      color: #333;
-    }
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #ffcc00;
-    }
-    nav a.active {
-      font-weight: bold;
-      color: #ffcc00;
-      text-decoration: underline;
-    }
-    main {
+    #quiz-container {
       max-width: 600px;
-      margin: 30px auto;
+      margin: 20px auto;
       padding: 15px;
-      background-color: #fff;
+      border: 2px solid #333;
       border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    #quiz-container img {
-      display: none !important; /* Ocultamos imágenes */
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
     }
     #opciones div {
       margin-bottom: 8px;
@@ -62,230 +26,202 @@
       cursor: pointer;
       padding: 8px 12px;
       margin-top: 10px;
-      background-color: #007bff;
-      border: none;
-      color: white;
-      border-radius: 4px;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
     }
-    button:hover {
-      background-color: #0056b3;
+    header nav a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #007bff;
     }
-    footer {
-      text-align: center;
-      padding: 15px 10px;
-      background-color: #222;
-      color: #ccc;
-      margin-top: 40px;
+    header nav a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>⚽ FutQuizz</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="quizzes.html" class="active">Quizzes</a>
-      <a href="historias.html">Historias</a>
-    </nav>
-  </header>
+<header>
+  <h1>⚽ FutQuizz</h1>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="quizzes.html">Quizzes</a>
+    <a href="historias.html">Historias</a>
+  </nav>
+</header>
 
-  <main>
-    <div id="quiz-container">
-      <h1>Quiz de Fútbol</h1>
-      <p id="pregunta"></p>
-      <img id="imagen" src="" alt="Imagen pregunta" />
-      <div id="opciones"></div>
-      <button onclick="verificar()">Verificar respuesta</button>
-      <div id="resultado"></div>
-    </div>
-  </main>
+<main>
+  <div id="quiz-container">
+    <h1>Quiz de Fútbol</h1>
+    <p id="pregunta"></p>
+    <div id="opciones"></div>
+    <button onclick="verificar()">Verificar respuesta</button>
+    <div id="resultado"></div>
+  </div>
+</main>
 
-  <footer>
-    <p>&copy; 2025 Lucas Collado</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Lucas Collado</p>
+</footer>
 
-  <script>
-    const preguntas = [
-      {
-        pregunta: "¿Quién ganó la Copa Mundial de la FIFA en 2018?",
-        imagen: "",
-        opciones: ["Alemania", "Francia", "Brasil", "Argentina"],
-        correcta: 1
-      },
-      {
-        pregunta: '¿Qué jugador es conocido como "El Fenómeno"?',
-        imagen: "",
-        opciones: ["Ronaldo Nazário", "Pelé", "Lionel Messi", "Cristiano Ronaldo"],
-        correcta: 0
-      },
-      {
-        pregunta: "¿En qué año se fundó el club FC Barcelona?",
-        imagen: "",
-        opciones: ["1899", "1902", "1888", "1910"],
-        correcta: 0
-      },
-      {
-        pregunta: "¿Qué país tiene más títulos mundiales de fútbol?",
-        imagen: "",
-        opciones: ["Italia", "Alemania", "Brasil", "Argentina"],
-        correcta: 2
-      },
-      {
-        pregunta: "¿Quién es el máximo goleador histórico de la Liga española?",
-        imagen: "",
-        opciones: ["Lionel Messi", "Cristiano Ronaldo", "Telmo Zarra", "Raúl González"],
-        correcta: 0
-      },
-      {
-        pregunta: "¿Cuál es el apodo del club inglés Manchester United?",
-        imagen: "",
-        opciones: ["The Reds", "The Blues", "The Red Devils", "The Gunners"],
-        correcta: 2
-      },
-      {
-        pregunta: "¿Cuántos jugadores hay en un equipo de fútbol en el campo durante un partido?",
-        imagen: "",
-        opciones: ["9", "10", "11", "12"],
-        correcta: 2
-      },
-      {
-        pregunta: "¿Qué selección ganó la Eurocopa de 2016?",
-        imagen: "",
-        opciones: ["Francia", "Alemania", "Portugal", "España"],
-        correcta: 2
-      },
-      {
-        pregunta: "¿Quién ganó el Balón de Oro en 2023?",
-        imagen: "",
-        opciones: ["Lionel Messi", "Kylian Mbappé", "Erling Haaland", "Karim Benzema"],
-        correcta: 0
-      },
-      {
-        pregunta: "¿Qué equipo tiene el récord de más títulos de la UEFA Champions League?",
-        imagen: "",
-        opciones: ["AC Milan", "Real Madrid", "Liverpool", "Bayern Munich"],
-        correcta: 1
-      },
-      {
-        pregunta: "¿Cuál es la duración oficial de un partido de fútbol profesional?",
-        imagen: "",
-        opciones: ["90 minutos", "80 minutos", "100 minutos", "120 minutos"],
-        correcta: 0
-      },
-      {
-        pregunta: "¿Qué significa la sigla FIFA?",
-        imagen: "",
-        opciones: [
-          "Federación Internacional de Fútbol Asociación",
-          "Federación Internacional de Fútbol Amateurs",
-          "Federación Internacional de Fútbol Asociado",
-          "Federación Internacional de Fútbol de América"
-        ],
-        correcta: 2
-      },
-      {
-        pregunta: "¿En qué país se originó el fútbol moderno?",
-        imagen: "",
-        opciones: ["Inglaterra", "Escocia", "España", "Italia"],
-        correcta: 0
-      },
-      {
-        pregunta: "¿Quién es el entrenador con más títulos en la historia de la Champions League?",
-        imagen: "",
-        opciones: ["Carlo Ancelotti", "Pep Guardiola", "Alex Ferguson", "Zinedine Zidane"],
-        correcta: 0
-      },
-      {
-        pregunta: "¿Qué famoso jugador argentino es apodado “La Pulga”?",
-        imagen: "",
-        opciones: ["Diego Maradona", "Lionel Messi", "Sergio Agüero", "Carlos Tevez"],
-        correcta: 1
+<script>
+  const preguntas = [
+    {
+      pregunta: "¿Quién ganó la Copa Mundial de la FIFA en 2018?",
+      opciones: ["Alemania", "Francia", "Brasil", "Argentina"],
+      correcta: 1
+    },
+    {
+      pregunta: '¿Qué jugador es conocido como "El Fenómeno"?',
+      opciones: ["Ronaldo Nazário", "Pelé", "Lionel Messi", "Cristiano Ronaldo"],
+      correcta: 0
+    },
+    {
+      pregunta: "¿En qué año se fundó el club FC Barcelona?",
+      opciones: ["1899", "1902", "1888", "1910"],
+      correcta: 0
+    },
+    {
+      pregunta: "¿Qué país tiene más títulos mundiales de fútbol?",
+      opciones: ["Italia", "Alemania", "Brasil", "Argentina"],
+      correcta: 2
+    },
+    {
+      pregunta: "¿Quién es el máximo goleador histórico de la Liga española?",
+      opciones: ["Lionel Messi", "Cristiano Ronaldo", "Telmo Zarra", "Raúl González"],
+      correcta: 0
+    },
+    {
+      pregunta: "¿Cuál es el apodo del club inglés Manchester United?",
+      opciones: ["The Reds", "The Blues", "The Red Devils", "The Gunners"],
+      correcta: 2
+    },
+    {
+      pregunta: "¿Cuántos jugadores hay en un equipo de fútbol en el campo durante un partido?",
+      opciones: ["9", "10", "11", "12"],
+      correcta: 2
+    },
+    {
+      pregunta: "¿Qué selección ganó la Eurocopa de 2016?",
+      opciones: ["Francia", "Alemania", "Portugal", "España"],
+      correcta: 2
+    },
+    {
+      pregunta: "¿Quién ganó el Balón de Oro en 2023?",
+      opciones: ["Lionel Messi", "Kylian Mbappé", "Erling Haaland", "Karim Benzema"],
+      correcta: 0
+    },
+    {
+      pregunta: "¿Qué equipo tiene el récord de más títulos de la UEFA Champions League?",
+      opciones: ["AC Milan", "Real Madrid", "Liverpool", "Bayern Munich"],
+      correcta: 1
+    },
+    {
+      pregunta: "¿Cuál es la duración oficial de un partido de fútbol profesional?",
+      opciones: ["90 minutos", "80 minutos", "100 minutos", "120 minutos"],
+      correcta: 0
+    },
+    {
+      pregunta: "¿Qué significa la sigla FIFA?",
+      opciones: [
+        "Federación Internacional de Fútbol Asociación",
+        "Federación Internacional de Fútbol Amateurs",
+        "Federación Internacional de Fútbol Asociado",
+        "Federación Internacional de Fútbol de América"
+      ],
+      correcta: 2
+    },
+    {
+      pregunta: "¿En qué país se originó el fútbol moderno?",
+      opciones: ["Inglaterra", "Escocia", "España", "Italia"],
+      correcta: 0
+    },
+    {
+      pregunta: "¿Quién es el entrenador con más títulos en la historia de la Champions League?",
+      opciones: ["Carlo Ancelotti", "Pep Guardiola", "Alex Ferguson", "Zinedine Zidane"],
+      correcta: 0
+    },
+    {
+      pregunta: "¿Qué famoso jugador argentino es apodado “La Pulga”?",
+      opciones: ["Diego Maradona", "Lionel Messi", "Sergio Agüero", "Carlos Tevez"],
+      correcta: 1
+    }
+  ];
+
+  let preguntaActual = 0;
+  let puntaje = 0;
+
+  function cargarPregunta() {
+    const preguntaElem = document.getElementById("pregunta");
+    const opcionesElem = document.getElementById("opciones");
+    const resultadoElem = document.getElementById("resultado");
+
+    resultadoElem.textContent = "";
+    opcionesElem.innerHTML = "";
+
+    const preguntaObj = preguntas[preguntaActual];
+    preguntaElem.textContent = preguntaObj.pregunta;
+
+    preguntaObj.opciones.forEach((opcion, index) => {
+      const div = document.createElement("div");
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "respuesta";
+      input.id = "op" + index;
+      input.value = index;
+
+      const label = document.createElement("label");
+      label.htmlFor = "op" + index;
+      label.textContent = opcion;
+
+      div.appendChild(input);
+      div.appendChild(label);
+      opcionesElem.appendChild(div);
+    });
+  }
+
+  function verificar() {
+    const opciones = document.getElementsByName("respuesta");
+    let seleccion = null;
+    for (const opcion of opciones) {
+      if (opcion.checked) {
+        seleccion = Number(opcion.value);
+        break;
       }
-    ];
-
-    let preguntaActual = 0;
-    let puntaje = 0;
-
-    function cargarPregunta() {
-      const preguntaElem = document.getElementById("pregunta");
-      const imagenElem = document.getElementById("imagen");
-      const opcionesElem = document.getElementById("opciones");
-      const resultadoElem = document.getElementById("resultado");
-
-      resultadoElem.textContent = "";
-      opcionesElem.innerHTML = "";
-
-      const preguntaObj = preguntas[preguntaActual];
-      preguntaElem.textContent = preguntaObj.pregunta;
-
-      // Ocultamos siempre la imagen para que no aparezca
-      imagenElem.style.display = "none";
-
-      preguntaObj.opciones.forEach((opcion, index) => {
-        const div = document.createElement("div");
-
-        const input = document.createElement("input");
-        input.type = "radio";
-        input.name = "respuesta";
-        input.id = "op" + index;
-        input.value = index;
-
-        const label = document.createElement("label");
-        label.htmlFor = "op" + index;
-        label.textContent = opcion;
-
-        div.appendChild(input);
-        div.appendChild(label);
-        opcionesElem.appendChild(div);
-      });
     }
 
-    function verificar() {
-      const opciones = document.getElementsByName("respuesta");
-      let seleccion = null;
-      for (const opcion of opciones) {
-        if (opcion.checked) {
-          seleccion = Number(opcion.value);
-          break;
-        }
-      }
+    const resultado = document.getElementById("resultado");
+    if (seleccion === null) {
+      resultado.textContent = "Por favor, selecciona una respuesta.";
+      resultado.style.color = "red";
+      return;
+    }
 
-      const resultado = document.getElementById("resultado");
-      if (seleccion === null) {
-        resultado.textContent = "Por favor, selecciona una respuesta.";
-        resultado.style.color = "red";
-        return;
-      }
+    if (seleccion === preguntas[preguntaActual].correcta) {
+      resultado.textContent = "¡Correcto!";
+      resultado.style.color = "green";
+      puntaje++;
+    } else {
+      resultado.textContent = "Incorrecto.";
+      resultado.style.color = "red";
+    }
 
-      if (seleccion === preguntas[preguntaActual].correcta) {
-        resultado.textContent = "¡Correcto!";
-        resultado.style.color = "green";
-        puntaje++;
+    setTimeout(() => {
+      preguntaActual++;
+      if (preguntaActual < preguntas.length) {
+        cargarPregunta();
       } else {
-        resultado.textContent = "Incorrecto.";
-        resultado.style.color = "red";
+        mostrarResultadoFinal();
       }
+    }, 1500);
+  }
 
-      setTimeout(() => {
-        preguntaActual++;
-        if (preguntaActual < preguntas.length) {
-          cargarPregunta();
-        } else {
-          mostrarResultadoFinal();
-        }
-      }, 1500);
-    }
+  function mostrarResultadoFinal() {
+    const container = document.getElementById("quiz-container");
+    container.innerHTML = `<h2>Quiz terminado</h2><p>Tu puntaje fue ${puntaje} de ${preguntas.length}.</p>`;
+  }
 
-    function mostrarResultadoFinal() {
-      const container = document.getElementById("quiz-container");
-      container.innerHTML = `<h2>Quiz terminado</h2><p>Tu puntaje fue ${puntaje} de ${preguntas.length}.</p>`;
-    }
-
-    cargarPregunta();
-  </script>
+  cargarPregunta();
+</script>
 
 </body>
 </html>
