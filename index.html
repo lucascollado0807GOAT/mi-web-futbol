@@ -5,60 +5,61 @@
   <title>Inicio - FutQuizz</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Estilos básicos para menú y contenido */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      padding: 0;
+      background-color: #f2f2f2;
     }
+
     header {
-      background-color: #222;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    nav a:hover,
-    nav a.active {
-      color: #ffcc00;
-    }
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 15px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    main h2 {
-      font-size: 2rem;
-      margin-top: 0;
-      padding-top: 20px;
-    }
-    main p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
       text-align: center;
-      padding: 15px 10px;
-      background-color: #222;
-      color: #ccc;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-top: 30px;
+    }
+
+    h2 {
+      color: #003366;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      background: #ffffff;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
       margin-top: 40px;
     }
   </style>
@@ -68,7 +69,7 @@
   <header>
     <h1>⚽ FutQuizz</h1>
     <nav>
-      <a href="index.html" class="active">Inicio</a>
+      <a href="index.html">Inicio</a>
       <a href="quizzes.html">Quizzes</a>
       <a href="historias.html">Historias</a>
     </nav>
@@ -76,20 +77,24 @@
 
   <main>
     <h2>Bienvenido a FutQuizz</h2>
-    <p>
-      Explorá quizzes de fútbol y conocé historias de jugadores y clubes legendarios.
-      Pronto agregaremos más contenido para que puedas aprender y divertirte.
-    </p>
+    <p>Explorá quizzes de fútbol y conocé historias de jugadores y clubes legendarios.</p>
 
-    <!-- Aquí podés agregar secciones nuevas, por ejemplo: -->
-    <section>
-      <h3>Noticias destacadas</h3>
-      <p>Próximamente las últimas novedades del mundo del fútbol.</p>
+    <section id="noticias">
+      <h2>🗞️ Noticias del día - 21 de julio de 2025</h2>
+      <ul>
+        <li><strong>Barcelona</strong> cierra pretemporada con victoria ante Juventus (2-1).</li>
+        <li><strong>Real Madrid</strong> viaja a Estados Unidos para su gira internacional.</li>
+        <li><strong>Argentina Sub-20</strong> clasifica a la final del torneo Maurice Revello.</li>
+      </ul>
     </section>
 
-    <section>
-      <h3>Historias de leyendas</h3>
-      <p>Descubrí la vida y carrera de tus jugadores favoritos.</p>
+    <section id="partidos">
+      <h2>📅 Partidos del día - 21 de julio de 2025</h2>
+      <ul>
+        <li>Atlético Mineiro vs Palmeiras – 23:00 (Copa Libertadores)</li>
+        <li>Newcastle vs Chelsea – 19:30 (Amistoso)</li>
+        <li>Inter Miami vs LA Galaxy – 02:00 (MLS)</li>
+      </ul>
     </section>
   </main>
 
