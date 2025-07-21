@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f2f2f2;
+    }
+    main {
+      display: flex;
+      gap: 20px;
+      height: 90vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    section {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      padding: 15px;
+      overflow-y: auto;
+      flex: 1;
+      min-width: 200px;
+    }
+    h2 {
+      margin-top: 0;
+      color: #003366;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 5px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="noticias">
+      <h2>Noticias</h2>
+      <ul>
+        <li><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia" /> Noticia 1: Movimiento en fichajes.</li>
+        <li><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia" /> Noticia 2: Preparación de amistosos.</li>
+        <li><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia" /> Noticia 3: Torneo Sub-20 internacional.</li>
+      </ul>
+    </section>
+    <section id="partidos">
+      <h2>Partidos</h2>
+      <ul>
+        <li><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido" /> Equipo A vs Equipo B - 23:00</li>
+        <li><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido" /> Equipo C vs Equipo D - 19:30</li>
+        <li><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido" /> Equipo E vs Equipo F - 02:00</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
