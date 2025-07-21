@@ -1,44 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Fútbol - Próximos Partidos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background: #f9f9f9;
+document.addEventListener("DOMContentLoaded", () => {
+  async function cargarPartidos() {
+    const url = 'https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4328';
+    try {
+      const respuesta = await fetch(url);
+      const datos = await respuesta.json();
+      const lista = document.getElementById("lista-partidos");
+      lista.innerHTML = "";
+      if (datos.events) {
+        datos.events.forEach(evento => {
+          const li = document.createElement("li");
+          const img = document.createElement("img");
+          img.src = evento.strThumb || 'https://via.placeholder.com/50';
+          img.alt = evento.strEvent;
+          const texto = document.createTextNode(`${evento.strHomeTeam} vs ${evento.strAwayTeam} – ${evento.dateEvent} ${evento.strTime}`);
+          li.appendChild(img);
+          li.appendChild(texto);
+          lista.appendChild(li);
+        });
+      } else {
+        lista.textContent = "No hay partidos próximos disponibles.";
+      }
+    } catch (error) {
+      console.error("Error cargando partidos:", error);
+      document.getElementById("lista-partidos").textContent = "Error al cargar partidos.";
     }
-    #partidos {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 600px;
-      margin: auto;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 5px;
-      border-radius: 5px;
-    }
-    h4 {
-      margin-bottom: 5px;
-    }
-    hr {
-      margin: 15px 0;
-      border: none;
-      border-top: 1px solid #ccc;
-    }
-  </style>
-</head>
-<body>
+  }
 
-  <h1>Próximos Partidos - Premier League</h1>
+  function cargarNoticias() {
+    const noticias = [
+      { titulo: "Messi regresa al Barcelona", imagen: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg" },
+      { titulo: "Real Madrid ficha nueva estrella", imagen: "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" },
+      { titulo: "Mercado de fichajes en auge", imagen: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Transfermarkt_logo.svg" }
+    ];
+    const lista = document.getElementById("lista-noticias");
+    lista.innerHTML = "";
+    noticias.forEach(n => {
+      const li = document.createElement("li");
+      const img = document.createElement("img");
+      img.src = n.imagen;
+      img.alt = n.titulo;
+      const texto = document.createTextNode(n.titulo);
+      li.appendChild(img);
+      li.appendChild(texto);
+      lista.appendChild(li);
+    });
+  }
 
-  <div id="partidos">Cargando partidos...</div>
-
-  <script src="scripts.js"></script>
-</body>
-</html>
+  cargarNoticias();
+  cargarPartidos();
+});
