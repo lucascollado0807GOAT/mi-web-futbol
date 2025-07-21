@@ -1,19 +1,18 @@
-// Datos reales de ejemplo para noticias y partidos
 const noticias = [
   {
-    titulo: "Messi vuelve al FC Barcelona",
+    titulo: "Lionel Messi gana el Balón de Oro 2023",
     imagen: "https://upload.wikimedia.org/wikipedia/commons/8/89/Lionel_Messi_20180626.jpg",
-    descripcion: "El astro argentino regresa al club blaugrana después de una temporada fuera."
+    descripcion: "El argentino Lionel Messi conquistó su octavo Balón de Oro."
   },
   {
-    titulo: "Real Madrid ficha a nuevo delantero",
-    imagen: "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
-    descripcion: "El equipo blanco anuncia la incorporación de un joven talento."
+    titulo: "Mbappé se convierte en máximo goleador del PSG",
+    imagen: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Kylian_Mbappe_2019.jpg",
+    descripcion: "Kylian Mbappé superó el récord goleador del club francés."
   },
   {
-    titulo: "UEFA anuncia nueva Champions League",
-    imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FIFA_WC_2018_Logo.svg/800px-FIFA_WC_2018_Logo.svg.png",
-    descripcion: "Cambios importantes en la estructura del torneo europeo más prestigioso."
+    titulo: "UEFA Champions League anuncia nuevas fechas para la temporada 2025",
+    imagen: "https://upload.wikimedia.org/wikipedia/commons/f/f2/UEFA_Champions_League_logo_2.svg",
+    descripcion: "El torneo europeo tendrá cambios en el calendario para mejorar el espectáculo."
   }
 ];
 
