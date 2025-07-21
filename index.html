@@ -9,14 +9,44 @@
     header { background-color: #003366; color: white; padding: 20px; text-align: center; }
     nav a { margin: 0 15px; color: #fff; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
-    main { padding: 20px; }
-    section { margin-top: 30px; }
-    h2 { color: #003366; }
-    ul { list-style: none; padding: 0; }
-    li { background: #fff; margin-bottom: 10px; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .noticia-img, .partido-img { max-width: 50px; vertical-align: middle; margin-right: 10px; border-radius: 5px; }
-    .item { display: flex; align-items: center; }
+    main { padding: 20px; display: flex; gap: 20px; flex-wrap: wrap; }
+
+    /* Contenedores columnas */
+    #noticias, #partidos {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      height: 500px;
+      overflow-y: auto;
+      flex: 1 1 45%;
+      box-sizing: border-box;
+    }
+
+    h2 { color: #003366; margin-top: 0; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { margin-bottom: 15px; display: flex; align-items: center; }
+
+    /* Imagenes */
+    .noticia-img, .partido-img {
+      max-width: 50px;
+      border-radius: 5px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
     footer { background-color: #003366; color: white; text-align: center; padding: 10px; margin-top: 40px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+      #noticias, #partidos {
+        height: auto;
+        flex-basis: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -31,23 +61,20 @@
   </header>
 
   <main>
-    <h2>Bienvenido a FutQuizz</h2>
-    <p>Explorá quizzes de fútbol, historias, noticias y partidos del día.</p>
-
     <section id="noticias">
       <h2>🗞️ Noticias del día - 21 de julio de 2025</h2>
       <ul>
-        <li class="item">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia fútbol" class="noticia-img" />
-          <strong>Gran movimiento en el mercado de fichajes este verano.</strong>
+        <li>
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Icono noticia" class="noticia-img" />
+          Gran movimiento en el mercado de fichajes este verano.
         </li>
-        <li class="item">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia fútbol" class="noticia-img" />
-          <strong>Equipos preparan la próxima temporada con amistosos importantes.</strong>
+        <li>
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Icono noticia" class="noticia-img" />
+          Equipos preparan la próxima temporada con amistosos importantes.
         </li>
-        <li class="item">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia fútbol" class="noticia-img" />
-          <strong>El torneo internacional Sub-20 atrae talento de todo el mundo.</strong>
+        <li>
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Icono noticia" class="noticia-img" />
+          El torneo internacional Sub-20 atrae talento de todo el mundo.
         </li>
       </ul>
     </section>
@@ -55,16 +82,16 @@
     <section id="partidos">
       <h2>📅 Partidos del día - 21 de julio de 2025</h2>
       <ul>
-        <li class="item">
-          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido fútbol" class="partido-img" />
+        <li>
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Icono partido" class="partido-img" />
           Equipo A vs Equipo B – 23:00 (Torneo Local)
         </li>
-        <li class="item">
-          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido fútbol" class="partido-img" />
+        <li>
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Icono partido" class="partido-img" />
           Equipo C vs Equipo D – 19:30 (Amistoso)
         </li>
-        <li class="item">
-          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido fútbol" class="partido-img" />
+        <li>
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Icono partido" class="partido-img" />
           Equipo E vs Equipo F – 02:00 (MLS)
         </li>
       </ul>
