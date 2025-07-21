@@ -5,63 +5,18 @@
   <title>Inicio - FutQuizz</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f2f2f2;
-    }
-
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    section {
-      margin-top: 30px;
-    }
-
-    h2 {
-      color: #003366;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      background: #ffffff;
-      margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 40px;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f2f2f2; }
+    header { background-color: #003366; color: white; padding: 20px; text-align: center; }
+    nav a { margin: 0 15px; color: #fff; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 20px; }
+    section { margin-top: 30px; }
+    h2 { color: #003366; }
+    ul { list-style: none; padding: 0; }
+    li { background: #fff; margin-bottom: 10px; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .noticia-img, .partido-img { max-width: 50px; vertical-align: middle; margin-right: 10px; border-radius: 5px; }
+    .item { display: flex; align-items: center; }
+    footer { background-color: #003366; color: white; text-align: center; padding: 10px; margin-top: 40px; }
   </style>
 </head>
 <body>
@@ -77,23 +32,41 @@
 
   <main>
     <h2>Bienvenido a FutQuizz</h2>
-    <p>Explorá quizzes de fútbol y conocé historias de jugadores y clubes legendarios.</p>
+    <p>Explorá quizzes de fútbol, historias, noticias y partidos del día.</p>
 
     <section id="noticias">
       <h2>🗞️ Noticias del día - 21 de julio de 2025</h2>
       <ul>
-        <li><strong>Barcelona</strong> cierra pretemporada con victoria ante Juventus (2-1).</li>
-        <li><strong>Real Madrid</strong> viaja a Estados Unidos para su gira internacional.</li>
-        <li><strong>Argentina Sub-20</strong> clasifica a la final del torneo Maurice Revello.</li>
+        <li class="item">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia fútbol" class="noticia-img" />
+          <strong>Gran movimiento en el mercado de fichajes este verano.</strong>
+        </li>
+        <li class="item">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia fútbol" class="noticia-img" />
+          <strong>Equipos preparan la próxima temporada con amistosos importantes.</strong>
+        </li>
+        <li class="item">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Noticia fútbol" class="noticia-img" />
+          <strong>El torneo internacional Sub-20 atrae talento de todo el mundo.</strong>
+        </li>
       </ul>
     </section>
 
     <section id="partidos">
       <h2>📅 Partidos del día - 21 de julio de 2025</h2>
       <ul>
-        <li>Atlético Mineiro vs Palmeiras – 23:00 (Copa Libertadores)</li>
-        <li>Newcastle vs Chelsea – 19:30 (Amistoso)</li>
-        <li>Inter Miami vs LA Galaxy – 02:00 (MLS)</li>
+        <li class="item">
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido fútbol" class="partido-img" />
+          Equipo A vs Equipo B – 23:00 (Torneo Local)
+        </li>
+        <li class="item">
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido fútbol" class="partido-img" />
+          Equipo C vs Equipo D – 19:30 (Amistoso)
+        </li>
+        <li class="item">
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Partido fútbol" class="partido-img" />
+          Equipo E vs Equipo F – 02:00 (MLS)
+        </li>
       </ul>
     </section>
   </main>
